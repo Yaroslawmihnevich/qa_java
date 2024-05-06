@@ -2,12 +2,10 @@ package com.example;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mock;
 
 import java.util.List;
 
 public class LionTest {
-    @Mock
     Feline feline = new Feline();
 
     @Test
@@ -29,11 +27,12 @@ public class LionTest {
                 ()->{Lion lion = new Lion("abcd", feline);}
         );
     }
-    public void EatMeat() throws Exception {
+    @Test
+    public void eatMeat() throws Exception {
         Assert.assertEquals((new Lion("Самец", feline)).getFood(), List.of("Животные", "Птицы", "Рыба"));
     }
     @Test
-    public void Kittens() throws Exception {
+    public void kittens() throws Exception {
         int kittens = (new Lion("Самец", feline)).getKittens();
         Assert.assertEquals(1, kittens);
     }
