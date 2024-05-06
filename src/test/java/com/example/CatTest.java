@@ -2,10 +2,7 @@ package com.example;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 public class CatTest {
@@ -13,11 +10,11 @@ public class CatTest {
     @Mock
     Cat cat = new Cat(feline);
     @Test
-    public void Sound() {
+    public void sound() {
         Assert.assertEquals("Мяу", cat.getSound());
     }
     @Test
-    public void EatMeat() throws Exception {
+    public void eatMeat() throws Exception {
         Assert.assertEquals(cat.getFood(), List.of("Животные", "Птицы", "Рыба"));
     }
 }
